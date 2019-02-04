@@ -27,18 +27,19 @@ input {
 iframe {
   margin: auto;
 } 
-
+.video {
+  grid-area: video;
+}
 .grid-container {
-
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows:  auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:  auto;
   grid-gap: 0.5em;
-  grid-template-areas:  "header header"
-  "sub-header sub-header"
-  "form form"
-  "info   video"
-  "bottom bottom"
+  grid-template-areas:  "header header header"
+  "sub-header sub-header sub-header"
+  "form form form"
+  "info   video video"
+  "bottom bottom bottom"
 }
 
 .info {
@@ -56,9 +57,12 @@ iframe {
 
 .bottom {
   grid-area: bottom;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns:1fr 3fr;
+  /* grid-template-rows: auto; */
+}
+.bottom > p {
+  place-self: center;
 }
 
 .card{
@@ -120,21 +124,18 @@ iframe {
   /* flex behavior causes whatever element right to be pushed to the right */
 }
 
-div {
-  /* border-style: dotted; */
-  /* border-color: red; */
-}
-
 /* center contents inside of each div (using flex) */
 .grid-container>div {
   font-size:2em;
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   background-color: dimgray;
   padding: 2em;
   box-shadow: 2em palevioletred /* NO VAAAAAAAAA!!! */
 }
+
+
 
  .grid-container>header {
   display: flex;
