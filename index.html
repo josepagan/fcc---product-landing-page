@@ -8,42 +8,34 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Russo+One|Hind+Guntur" rel="stylesheet">
-
 </head>
-
 <body>
-
     <div class="grid-container">
-
             <header id ="header" class="header">
-                        <img id="header-img" class="header-img" src="images/LogoMakr_9IX2Re.png" alt="beard coder logo">
+                        <img id="header-img" class="header-img" src="https://image-placeholder.com/images/actual-size/75x75.png" alt="beard coder logo">
                     <div class="header-name">
                         <p>Lorem Hipster Pixel Farm</p>
                     </div>
                     <nav class="nav-bar" id="nav-bar">
-        
-                        <div class="nav-link"><a href="#">Home</a></div>
-                        <div class="nav-link"><a href="#">About</a></div>
-                        <div class="nav-link"><a href="#">Contact</a></div>
+                        <span class="nav-link" href="#video">Home</span>
+                        <span class="nav-link" href="#form">Contact</span>
+                        <span class="nav-link" href="#products">Products</span>
         
                     </nav>
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100" preserveAspectRatio="none"> -->
-                        <!-- <polygon fill="white" points="0,100 100,0 100,100"/> -->
-                      <!-- </svg> -->
                 </header>
        
         <div class="sub-header">
           <p>We at Lorem Hipster Pixel Co are commited to grow and havest the best quality pixels you can afford.</p>
         </div>
-        <div class="info"><p>LOur Pixels are carefully grown, and then hand picked. Then we quickly transport them to our databases to make sure that when your browser fletch them they are in perfect state.</p></div>
+        <div class="info"><p>Our Pixels are carefully grown, and then hand picked. Then we quickly transport them to our databases to make sure that when your browser fletch them they are in perfect state.</p></div>
         <div class="video"><iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/PksCu-Zoet0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="form">
-            <form action="">
-                <input type="email" for="mail" name='user_mail' placeholder="your@email.com">
-                <button type="submit">Arreando</button>
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input id="email" type="email" for="mail" name='email' placeholder="your@email.com">
+                <input type="submit" id="submit"></button>
             </form>
         </div>
-        <div class="bottom">
+        <div class="products" id="products">
             <div class="card">1</div>
             <p>Our finest quality pixel represents the most astounding perfection</p>
             <div class="card">2</div>
@@ -52,11 +44,6 @@
             <p>Our basic quality pixel is still much better than the average in the industry, at a cheaper price</p>
         </div>
     </div>
-    <script>
-   console.log('probando');
-
-   
-    </script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> 
 <script src='http://127.0.0.1:9001/js/socket.js'></script>
     <!--<div></div>-->
