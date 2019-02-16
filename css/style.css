@@ -87,7 +87,8 @@ iframe {
 .header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: space-evenly;
+  /* align-items: flex-start; */
   /* it align elements vertically (cross axis)*/
   font-family: 'Russo One', sans-serif;
   font-size: 1.3em;
@@ -100,7 +101,6 @@ iframe {
   padding: 0px;
   margin: 0px;
   background-color:white;
-  background-image: url("../vectorpaint.svg");
   background-repeat:no-repeat;
   background-clip:content-box;
 }
@@ -110,14 +110,16 @@ iframe {
 }
 
 .nav-bar {
+  margin-right: 1em;
   display: flex;
+  flex-direction: column;
   justify-content: right;
-  align-items: center;
   font-size:2em;
 }
 
 .nav-link {
   margin-right: 25px;
+  display: block
 }
 
 .header-img {
@@ -125,11 +127,11 @@ iframe {
 }
 
 .header-name {
-  /* color: blue; */
   font-size: 2em;
-  margin-right: auto;
-  /* flex behavior causes whatever element right to be pushed to the right */
+  white-space:nowrap;
 }
+
+
 
 /* center contents inside of each div (using flex) */
 .grid-container>div {
@@ -139,7 +141,7 @@ iframe {
   /* align-items: center; */
   background-color: dimgray;
   padding: 2em;
-  box-shadow: 2em palevioletred /* NO VAAAAAAAAA!!! */
+
 }
 .grid-container>header {
   display: flex;
@@ -150,6 +152,16 @@ iframe {
 }
 
 @media only screen and (max-width: 800px) {
+  body, input, button {
+    font-size: 0.5em;
+  }
+  .video {
+    display:none;
+  }
+  .card {
+    width: 5em;
+    height: 5em;
+  }
   .grid-container  {
     grid-template-areas:  "header      header"
     "sub-header  sub-header"
