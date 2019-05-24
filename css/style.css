@@ -38,6 +38,10 @@ iframe {
 }
 
 .grid-container {
+  font-size: 0.7em;
+  /* margin: (0,10em,0,10em); */
+ margin-left: 10em; 
+ margin-right:10em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:  auto;
@@ -70,6 +74,7 @@ iframe {
 
 .products > p {
   place-self: center;
+  padding-left: 2em;
 }
 
 .card{
@@ -163,22 +168,30 @@ iframe {
     height: 5em;
   }
   .grid-container  {
-    grid-template-areas:  "header      header"
-    "sub-header  sub-header"
-    "form        form"
-    "info        info"
-    "video       video"
-    "products      products"
+    grid-template-areas:  "header      "
+    "sub-header  "
+    "form        "
+    "info        "
+    "video       "
+    "products      "
   }
+  /* .grid-container  { */
+  /*   grid-template-areas:  "header      header" */
+  /*   "sub-header  sub-header" */
+  /*   "form        form" */
+  /*   "info        info" */
+  /*   "video       video" */
+  /*   "products      products" */
+  /* } */
 }
 
 @media only screen and (max-width: 400px) {
   .grid-container  {
-    grid-template-areas:  "header      header"
-    "sub-header  sub-header"
-    "form        form"
-    "info        info"
-    "video       video"
-    "products      products"
+    grid-template-areas:  "header      "
+    "sub-header  "
+    "form        "
+    "info        "
+    "video       "
+    "products      "
   }
 }
