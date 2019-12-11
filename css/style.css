@@ -5,8 +5,12 @@
 a:link {
   color: black;
   text-decoration: none;
+  font-size: 0.7em;
 }
-
+html {
+  height: auto;
+  padding-bottom: 80vh;
+}
 p,body{
   padding: 0;
   margin: 0;
@@ -35,24 +39,27 @@ iframe {
 
 .video {
   grid-area: video;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .grid-container {
   font-size: 0.7em;
-  /* margin: (0,10em,0,10em); */
+  line-height: 1.5;
   max-width: 80em;
- /* margin-left: 10em; */ 
- /* margin-right:10em; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:  auto;
   grid-gap: 0.5em;
-  grid-template-areas:  "header header header"
+  grid-template-areas:
+  "header header header"
   "sub-header sub-header sub-header"
-  "form form form"
   "info   video video"
   "products products products"
+  "form form form"
+  "smallprint smallprint smallprint"
 }
 
 .info {
@@ -61,20 +68,21 @@ iframe {
 
 .form {
   grid-area: form;
-  /* grid-area: bottom; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .products {
   grid-area: products;
+}
+.products-wrapper {
   display: grid;
   grid-template-columns:1fr 3fr;
-  /* grid-template-rows: auto; */
 }
 
-.products > p {
+.products-wrapper > p {
   place-self: center;
   padding-left: 2em;
 }
@@ -91,12 +99,14 @@ iframe {
   margin-bottom: 50px;
 }
 
+.card > img {
+  max-width: 100%;
+}
+
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* align-items: flex-start; */
-  /* it align elements vertically (cross axis)*/
   font-family: 'Russo One', sans-serif;
   font-size: 1.3em;
   border-bottom-style: solid;
@@ -110,6 +120,7 @@ iframe {
   background-color:white;
   background-repeat:no-repeat;
   background-clip:content-box;
+  z-index: 2;
 }
 
 .sub-header {
@@ -139,23 +150,20 @@ iframe {
   white-space:nowrap;
 }
 
-
-
-/* center contents inside of each div (using flex) */
 .grid-container>div {
   font-size:2em;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   background-color: dimgray;
   padding: 2em;
 
 }
+.grid-container>div:last-child {
+  color:black;
+  background-color: white;
+  font-size: 0.9em;
+  padding-top: 0.5em;
+}
 .grid-container>header {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* background-color: dimgray; */
   box-shadow: 2em /* NO VAAAAAAAAA!!! */
 }
 
@@ -173,22 +181,14 @@ iframe {
     margin:0;
   }
   .grid-container  {
-    /* margin: 0; */
     grid-template-areas:  "header      "
     "sub-header  "
     "form        "
     "info        "
     "video       "
     "products      "
+    "smallprint"
   }
-  /* .grid-container  { */
-  /*   grid-template-areas:  "header      header" */
-  /*   "sub-header  sub-header" */
-  /*   "form        form" */
-  /*   "info        info" */
-  /*   "video       video" */
-  /*   "products      products" */
-  /* } */
 }
 
 @media only screen and (max-width: 400px) {
@@ -203,10 +203,13 @@ iframe {
 }
 
 .iframe-container{
+
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
   height: 0;
+  overflow: hidden;
+  z-index: 1
 }
 .iframe-container iframe{
   position: absolute;
@@ -214,4 +217,15 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#email-anchor, #products-anchor {
+  position: relative;
+  top: -150px;
+  /* display: block; */
+
+}
+
+.smallprint {
+ grid-area: smallprint;
 }
